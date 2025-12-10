@@ -1,0 +1,25 @@
+/* Font Face Declarations */
+
+@font-face {
+  font-family: "HBR55";
+  src: url("/assets/Fonts/HBR55.OTF") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HBR56";
+  src: url("/assets/Fonts/HBR56.OTF") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Quattrocento";
+  src: url("/assets/Fonts/Quattrocento-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
