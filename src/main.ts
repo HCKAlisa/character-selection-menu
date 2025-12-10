@@ -1,9 +1,14 @@
-// Application initialization
-const app = document.getElementById('app');
+import { CharacterGrid } from './components/CharacterGrid';
+import { CHARACTERS } from './shared/characters';
 
-if (app) {
-  app.innerHTML = '<h1>Application initialized</h1>';
-  console.log('Application initialized');
+// Application initialization
+const gridContainer = document.getElementById('character-grid');
+
+if (gridContainer) {
+  // Test with all characters
+  new CharacterGrid(gridContainer as HTMLDivElement, CHARACTERS);
+
+  console.log('Character grid rendered with', CHARACTERS.length, 'characters');
 } else {
-  console.error('Failed to find app element');
+  console.error('Failed to find character-grid element');
 }

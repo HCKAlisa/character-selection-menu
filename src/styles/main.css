@@ -1,5 +1,6 @@
 /* Import fonts */
 @import "./fonts.css";
+@import "./card.css";
 
 /* CSS Reset */
 *,
@@ -12,12 +13,41 @@
 :root {
   --font-color: #f0e0d1;
   --background-color: #11121c;
+  --transition-base: 250ms ease-in-out;
+
+  /* Fonts */
+  --font-primary: "HBR55", sans-serif;
+  --font-secondary: "HBR56", sans-serif;
+  --font-accent: "Quattrocento", serif;
+
+  /* Layout */
+  --sidebar-width: 240px;
+  --card-width: 175px;
+  --card-height: 245px;
+  --card-border-radius: 4px;
+  --character-grid-gap: 12px;
+
+  /* Icons */
+  --icon-size-sm: 24px;
+
+  /* Transitions */
+  --transition-base: 250ms ease-in-out;
+
+  /* Z-index layers */
+  --z-background: 0;
+  --z-content: 10;
+  --z-card-background: 20;
+  --z-card-portrait: 21;
+  --z-card-foreground: 22;
+  --z-card-lock: 23;
+  --z-divider: 50;
+  --z-bottom-bar: 100;
 }
 
 /* Base Styles */
 html,
 body {
-  font-family: "Quattrocento", sans-serif;
+  font-family: var(--font-primary);
   background-color: var(--background-color);
   color: var(--font-color);
 }
@@ -31,4 +61,15 @@ body {
   position: relative;
   line-height: 1.6;
   height: 100vh;
+}
+
+.character-grid {
+  max-width: 70vw;
+  margin: 0 auto;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: var(--character-grid-gap);
+  grid-row-gap: var(--character-grid-gap);
 }
