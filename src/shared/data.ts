@@ -1,34 +1,37 @@
 import { CharacterCategory } from "./types";
 import type { FilterType } from "./types";
 
+// Helper function to get asset path with base URL
+const getAssetPath = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+
 // Centralized asset path mappings for all game assets
 export const ASSET_PATHS = {
     buttons: {
-        normal: '/assets/Buttons/FilterButton_Normal.png',
-        hovered: '/assets/Buttons/FilterButton_Hovered.png',
-        active: '/assets/Buttons/FilterButton_Active.png',
-        checkboxEmpty: '/assets/Buttons/Checkbox_Empty.png',
-        checkboxFill: '/assets/Buttons/Checkbox_Fill.png',
+        normal: getAssetPath('/assets/Buttons/FilterButton_Normal.png'),
+        hovered: getAssetPath('/assets/Buttons/FilterButton_Hovered.png'),
+        active: getAssetPath('/assets/Buttons/FilterButton_Active.png'),
+        checkboxEmpty: getAssetPath('/assets/Buttons/Checkbox_Empty.png'),
+        checkboxFill: getAssetPath('/assets/Buttons/Checkbox_Fill.png'),
     },
     cards: {
-        backgroundNormal: '/assets/CharacterCards/CardStates/CharacterCard_Background_Normal.png',
-        backgroundActive: '/assets/CharacterCards/CardStates/CharacterCard_Background_Active.png',
-        foregroundNormal: '/assets/CharacterCards/CardStates/CharacterCard_Foreground_Normal.png',
-        foregroundLocked: '/assets/CharacterCards/CardStates/CharacterCard_Foreground_Locked.png',
-        active: '/assets/CharacterCards/CardStates/CharacterCard_Active.png',
-        lockedActive: '/assets/CharacterCards/CardStates/CharacterCard_Locked_Active.png',
+        backgroundNormal: getAssetPath('/assets/CharacterCards/CardStates/CharacterCard_Background_Normal.png'),
+        backgroundActive: getAssetPath('/assets/CharacterCards/CardStates/CharacterCard_Background_Active.png'),
+        foregroundNormal: getAssetPath('/assets/CharacterCards/CardStates/CharacterCard_Foreground_Normal.png'),
+        foregroundLocked: getAssetPath('/assets/CharacterCards/CardStates/CharacterCard_Foreground_Locked.png'),
+        active: getAssetPath('/assets/CharacterCards/CardStates/CharacterCard_Active.png'),
+        lockedActive: getAssetPath('/assets/CharacterCards/CardStates/CharacterCard_Locked_Active.png'),
     },
     icons: {
-        all: '/assets/Icons/Icon_All.png',
-        support: '/assets/Icons/Icon_Support.png',
-        tank: '/assets/Icons/Icon_Tank.png',
-        brawler: '/assets/Icons/Icon_Brawler.png',
-        assassin: '/assets/Icons/Icon_Assassin.png',
+        all: getAssetPath('/assets/Icons/Icon_All.png'),
+        support: getAssetPath('/assets/Icons/Icon_Support.png'),
+        tank: getAssetPath('/assets/Icons/Icon_Tank.png'),
+        brawler: getAssetPath('/assets/Icons/Icon_Brawler.png'),
+        assassin: getAssetPath('/assets/Icons/Icon_Assassin.png'),
     },
     static: {
-        background: '/assets/Static/Background.png',
-        divider: '/assets/Static/ScreenDivider.png',
-        bottomBar: '/assets/Static/Bottom_Bar.png',
+        background: getAssetPath('/assets/Static/Background.png'),
+        divider: getAssetPath('/assets/Static/ScreenDivider.png'),
+        bottomBar: getAssetPath('/assets/Static/Bottom_Bar.png'),
     },
 } as const;
 

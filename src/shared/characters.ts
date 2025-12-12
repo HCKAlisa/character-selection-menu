@@ -1,5 +1,8 @@
 import { type CharacterType, CharacterCategory } from "./types";
 
+// Helper function to get asset path with base URL
+const getAssetPath = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+
 export const CHARACTERS: CharacterType[] = [
     {
         id: 'adrian',
@@ -8,7 +11,7 @@ export const CHARACTERS: CharacterType[] = [
         isLocked: false,
         level: 2,
         maxLevel: 15,
-        imageUrl: '/assets/CharacterCards/CharacterPortraits/Adrian.png',
+        imageUrl: getAssetPath('/assets/CharacterCards/CharacterPortraits/Adrian.png'),
     },
     {
         id: 'alfred',
@@ -17,7 +20,7 @@ export const CHARACTERS: CharacterType[] = [
         isLocked: false,
         level: 2,
         maxLevel: 15,
-        imageUrl: '/assets/CharacterCards/CharacterPortraits/Alfred.png',
+        imageUrl: getAssetPath('/assets/CharacterCards/CharacterPortraits/Alfred.png'),
     },
     {
         id: 'amelia',
@@ -26,7 +29,7 @@ export const CHARACTERS: CharacterType[] = [
         isLocked: false,
         level: 8,
         maxLevel: 15,
-        imageUrl: '/assets/CharacterCards/CharacterPortraits/Amelia.png',
+        imageUrl: getAssetPath('/assets/CharacterCards/CharacterPortraits/Amelia.png'),
     },
     {
         id: 'annalise',
@@ -35,7 +38,7 @@ export const CHARACTERS: CharacterType[] = [
         isLocked: false,
         level: 1,
         maxLevel: 15,
-        imageUrl: '/assets/CharacterCards/CharacterPortraits/Annalise.png',
+        imageUrl: getAssetPath('/assets/CharacterCards/CharacterPortraits/Annalise.png'),
     },
     {
         id: 'djura',
@@ -44,7 +47,7 @@ export const CHARACTERS: CharacterType[] = [
         isLocked: true,
         level: 6,
         maxLevel: 15,
-        imageUrl: '/assets/CharacterCards/CharacterPortraits/Djura.png',
+        imageUrl: getAssetPath('/assets/CharacterCards/CharacterPortraits/Djura.png'),
     },
     {
         id: 'edwin',
@@ -53,7 +56,7 @@ export const CHARACTERS: CharacterType[] = [
         isLocked: false,
         level: 4,
         maxLevel: 15,
-        imageUrl: '/assets/CharacterCards/CharacterPortraits/Edwin.png',
+        imageUrl: getAssetPath('/assets/CharacterCards/CharacterPortraits/Edwin.png'),
     },
     {
         id: 'eileen',
@@ -62,7 +65,7 @@ export const CHARACTERS: CharacterType[] = [
         isLocked: false,
         level: 6,
         maxLevel: 15,
-        imageUrl: '/assets/CharacterCards/CharacterPortraits/Eileen.png',
+        imageUrl: getAssetPath('/assets/CharacterCards/CharacterPortraits/Eileen.png'),
     },
     {
         id: 'hunter',
@@ -71,7 +74,7 @@ export const CHARACTERS: CharacterType[] = [
         isLocked: false,
         level: 12,
         maxLevel: 15,
-        imageUrl: '/assets/CharacterCards/CharacterPortraits/Hunter.png',
+        imageUrl: getAssetPath('/assets/CharacterCards/CharacterPortraits/Hunter.png'),
     },
     {
         id: 'maria',
@@ -80,7 +83,7 @@ export const CHARACTERS: CharacterType[] = [
         isLocked: true,
         level: 4,
         maxLevel: 15,
-        imageUrl: '/assets/CharacterCards/CharacterPortraits/Maria.png',
+        imageUrl: getAssetPath('/assets/CharacterCards/CharacterPortraits/Maria.png'),
     },
     {
         id: 'old_hunter',
@@ -89,7 +92,7 @@ export const CHARACTERS: CharacterType[] = [
         isLocked: true,
         level: 1,
         maxLevel: 15,
-        imageUrl: '/assets/CharacterCards/CharacterPortraits/OldHiunter.png',
+        imageUrl: getAssetPath('/assets/CharacterCards/CharacterPortraits/OldHiunter.png'),
     },
     {
         id: 'pierce',
@@ -98,7 +101,7 @@ export const CHARACTERS: CharacterType[] = [
         isLocked: false,
         level: 0,
         maxLevel: 15,
-        imageUrl: '/assets/CharacterCards/CharacterPortraits/Pierce.png',
+        imageUrl: getAssetPath('/assets/CharacterCards/CharacterPortraits/Pierce.png'),
     },
     {
         id: 'yahar',
@@ -107,7 +110,7 @@ export const CHARACTERS: CharacterType[] = [
         isLocked: true,
         level: 0,
         maxLevel: 15,
-        imageUrl: '/assets/CharacterCards/CharacterPortraits/Yahar.png',
+        imageUrl: getAssetPath('/assets/CharacterCards/CharacterPortraits/Yahar.png'),
     },
 ];
 

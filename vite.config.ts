@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import path from 'path';
 
 export default defineConfig({
-  base: '/tech-test-alisa/',
+  base: '/character-selection-menu/',
   server: {
     port: 5173,
     open: true,
