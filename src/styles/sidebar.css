@@ -1,0 +1,232 @@
+.side-bar {
+  position: fixed;
+  background-color: rgba(17, 18, 28, 0.9);
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.filter-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  height: 100%;
+}
+
+.filter-button {
+  position: relative;
+  width: 17vw;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  transition: var(--transition-base);
+  outline: none;
+  aspect-ratio: 333 / 54;
+}
+
+.filter-button-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  transition: var(--transition-base);
+  pointer-events: none;
+}
+
+.filter-button__icon {
+  position: relative;
+  width: 10%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  margin-right: 1.5vw;
+  margin-left: 0.25vw;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.filter-button__label {
+  position: relative;
+  font-family: var(--font-primary);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--font-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-button--active {
+  filter: drop-shadow(0 0 8px #c41e3a);
+}
+
+.filter-button--hovered {
+  filter: brightness(1.1);
+}
+
+.filter-button--active .filter-button-background {
+  background-image: url("/assets/Buttons/FilterButton_Active.png");
+}
+
+.filter-button--normal .filter-button-background {
+  background-image: url("/assets/Buttons/FilterButton_Normal.png");
+}
+
+.filter-button--hovered .filter-button-background {
+  background-image: url("/assets/Buttons/FilterButton_Hovered.png");
+}
+
+.toggle-lock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3%;
+  width: 17vw;
+  padding: 6px;
+}
+
+.toggle-lock::after {
+  content: "";
+  position: absolute;
+  bottom: 3.5%;
+  left: 5%;
+  width: 10%;
+  height: 10%;
+  background-image: url("/assets/Buttons/Checkbox_Underline.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: calc(var(--z-divider) + 10);
+  pointer-events: none;
+}
+
+.toggle-lock__button {
+  width: 10%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  pointer-events: none;
+  transition: var(--transition-base);
+}
+
+.toggle-lock__label {
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+}
+
+.toggle-lock__button::hover {
+  filter: brightness(0.9);
+}
+
+.toggle-lock__button.toggle-lock__empty {
+  background-image: url("/assets/Buttons/Checkbox_Empty.png");
+}
+
+.toggle-lock__button.toggle-lock__checked {
+  background-image: url("/assets/Buttons/Checkbox_Fill.png");
+}
+
+/* Responsive Design */
+/* TODO: Fine-tune breakpoints and styles for sidebar */
+
+@media only screen and (max-width: 599px) {
+}
+
+@media (min-width: 600px) and (max-width: 904px) {
+}
+
+@media (min-width: 905px) and (max-width: 1239px) {
+}
+
+@media (min-width: 1240px) and (max-width: 1439px) {
+  .filter-nav {
+    padding: 20px 0;
+    height: 100%;
+  }
+
+  .filter-button {
+    width: 15vw;
+    padding: 6px;
+    margin-top: 5px;
+    aspect-ratio: 333 / 54;
+  }
+
+  .filter-button-background {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .filter-button__icon {
+    width: 10%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    margin-right: 1.5vw;
+    margin-left: 0.1vw;
+  }
+
+  .filter-button__label {
+    font-size: 1.1em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .toggle-lock {
+    gap: 3%;
+    width: 15vw;
+    padding: 6px;
+  }
+
+  .toggle-lock::after {
+    bottom: 3%;
+    left: 5.5%;
+    width: 10%;
+    height: 10%;
+  }
+
+  .toggle-lock__button {
+    width: 10%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .toggle-lock__label {
+    font-size: 1em;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  }
+}
+
+@media (min-width: 2550px) {
+}

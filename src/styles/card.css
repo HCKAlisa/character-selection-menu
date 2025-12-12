@@ -129,7 +129,7 @@
 /* Active State */
 .character-card--active {
   filter: brightness(1.15);
-  box-shadow: var(--shadow-glow-red);
+  filter: drop-shadow(0 0 3px #c41e3a);
   transform: scale(1.02);
 }
 
@@ -178,4 +178,95 @@
 /* Locked + Active State */
 .character-card--locked.character-card--active .character-card__portrait {
   filter: grayscale(0.3) brightness(0.85);
+}
+
+/* Responsive Design */
+/* TODO: Fine-tune breakpoints and styles for Cards */
+
+@media only screen and (max-width: 599px) {
+}
+
+@media (min-width: 600px) and (max-width: 904px) {
+}
+
+@media (min-width: 905px) and (max-width: 1239px) {
+}
+
+@media (min-width: 1240px) and (max-width: 1439px) {
+  .character-card {
+    width: 96%;
+    aspect-ratio: 5 / 7;
+  }
+
+  /* Background Layer (z-index: 20) */
+  .character-card__background {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Portrait Layer (z-index: 21) */
+  .character-card__portrait {
+    top: 45%;
+    left: 50%;
+    width: auto;
+    height: 78%;
+  }
+
+  /* Foreground Frame Layer (z-index: 22) */
+  .character-card__foreground {
+    top: 1%;
+    left: 2%;
+    width: 96%;
+    height: 98%;
+  }
+
+  /* Lock Overlay Layer (z-index: 23) */
+  .character-card__lock-overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Category Icon */
+  .character-card__category-icon {
+    bottom: 19%;
+    left: 50%;
+    width: 12%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  /* Character Name */
+  .character-card__name {
+    bottom: 9%;
+    left: 50%;
+    font-size: 0.9em;
+    letter-spacing: 0.8px;
+  }
+
+  /* Level Progression */
+  .character-card__level {
+    bottom: 2.5%;
+    left: 50%;
+    font-size: 0.7em;
+  }
+  /* Hovered State - Visual effects only, inherits background images from base state */
+  .character-card--hovered {
+    filter: brightness(1.1);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+  }
+
+  .character-card--locked::before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 2550px) {
 }
