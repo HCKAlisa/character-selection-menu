@@ -29,6 +29,8 @@ export class CharacterGrid {
 
     private renderCards(characterList: CharacterType[]): void {
         if (!this.container) return;
+        const currentSelectedId = this.appState.getSelectedCharacterId();
+        let isSelectedIdInList = false;
 
         characterList.forEach((character) => {
             const characterCard = new CharacterCard(character);
@@ -37,9 +39,19 @@ export class CharacterGrid {
                 character: character
             });
             this.container?.appendChild(characterCard.getElement());
+
+            if (character.id === currentSelectedId) {
+                isSelectedIdInList = true;
+            }
         });
 
+        if (!isSelectedIdInList) {
+            this.selectFirstCharacter();
+        }
+
         this.updateCardStates();
+
+
     }
 
     private clearCards(): void {
@@ -81,5 +93,15 @@ export class CharacterGrid {
                 instance.card.setState('Normal');
             }
         });
+    }
+
+    // Select first character in the grid
+    public selectFirstCharacter(): void {
+        if (this.cardInstances.length > 0) {
+            const firstCharacterId = this.cardInstances[0].character.id;
+            this.appState.setSelectedCharacterId(firstCharacterId);
+        } else {
+            this.appState.setSelectedCharacterId(null);
+        }
     }
 }

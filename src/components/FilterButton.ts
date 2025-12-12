@@ -99,14 +99,10 @@ export class FilterButton {
 
     // Handle button click
     private handleClick(): void {
-        console.log("clicked");
-
         this.appState.setActiveFilter(this.filterOption.category || null);
     }
 
     private handleMouseEnter(): void {
-        console.log("mouseEnter");
-
         if (this.visualState !== 'Active') {
             this.setState('Hovered');
         }

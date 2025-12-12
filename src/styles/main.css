@@ -81,7 +81,7 @@ body::after {
   height: 12.5vh;
   display: flex;
   align-items: flex-end;
-  padding: 0 4em;
+  padding: 0 3.6em;
 }
 
 .page-title {
@@ -89,11 +89,13 @@ body::after {
   font-size: 48px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
   letter-spacing: 10px;
+  -webkit-box-reflect: below -22px
+    linear-gradient(transparent, transparent 45%, rgba(255, 255, 255, 0.2));
 }
 
 .content-wrapper {
   display: grid;
-  grid-template-columns: 22vw 1fr;
+  grid-template-columns: 20vw 1fr;
   padding: 1rem 2rem;
 }
 
