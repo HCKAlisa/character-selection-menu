@@ -1,7 +1,4 @@
 import { type CharacterType, CharacterCategory } from "./types";
-import { ASSET_PATHS } from "./data";
-
-
 
 export const CHARACTERS: CharacterType[] = [
     {

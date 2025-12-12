@@ -27,13 +27,6 @@ export class CharacterGrid {
         this.renderCards(this.characters);
     }
 
-    private destroy(): void {
-        this.unsubscribeCallbacks.forEach((unsubscribe) => unsubscribe());
-        this.unsubscribeCallbacks = [];
-        this.clearCards();
-        this.container = null;
-    }
-
     private renderCards(characterList: CharacterType[]): void {
         if (!this.container) return;
 
