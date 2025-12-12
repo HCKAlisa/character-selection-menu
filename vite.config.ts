@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import path from 'path';
 
 export default defineConfig({
-  base: process.env.VITE_BASE_PATH || '/',
+  base: '/tech-test-alisa/',
   server: {
     port: 5173,
     open: true,
