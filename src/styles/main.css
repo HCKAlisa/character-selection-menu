@@ -128,10 +128,10 @@ body::after {
 .main-content::after {
   content: "";
   position: fixed;
-  bottom: 80px;
+  bottom: 6%;
   left: 25vw;
   right: 0;
-  height: 50px;
+  height: 5.5%;
   backdrop-filter: blur(0);
   filter: blur(2px);
   pointer-events: none;
