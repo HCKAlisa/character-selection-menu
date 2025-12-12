@@ -1,17 +1,19 @@
 import type { CharacterType, VisualState } from "../shared/types";
 import { getCategoryIconPath } from "../shared/data";
+import { AppState } from "@/state/AppState";
 
 export class CharacterCard {
   private character: CharacterType;
   private element: HTMLDivElement | null = null;
+  private appState: AppState;
   private visualState: VisualState;
   private eventHandlers: Map<string, EventListener> = new Map();
-  private onClick?: (Character: CharacterType) => void;
 
   constructor(character: CharacterType) {
     this.character = character;
     this.visualState = "Normal";
-    this.element = this.createCardElement();
+    this.appState = AppState.getInstance();
+    this.createCardElement();
   }
 
   // Get the card element
@@ -79,18 +81,24 @@ export class CharacterCard {
     return this.element;
   }
 
-  public setState(state: VisualState): void {
-    if (!this.element) return;
+  public setState(newState: VisualState): void {
+    if (this.visualState === newState) return;
 
     // Update current state tracker
-    this.visualState = state;
+    this.visualState = newState;
+    this.updateVisualState();
+  }
+
+  private updateVisualState(): void {
+    if (!this.element) return;
+
     // Remove hover and active modifiers
     this.element.classList.remove(
       "character-card--hovered",
       "character-card--active"
     );
 
-    switch (state) {
+    switch (this.visualState) {
       case "Normal":
         this.element.classList.remove("character-card--active", "character-card--hovered");
         this.element.classList.add("character-card--normal");
@@ -135,9 +143,7 @@ export class CharacterCard {
 
   // Handle click event
   private handleClick(): void {
-    if (this.onClick) {
-      this.onClick(this.character);
-    }
+    this.appState.setSelectedCharacterId(this.character.id);
   }
 
   // Handle mouse enter event

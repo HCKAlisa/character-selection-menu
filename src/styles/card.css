@@ -2,7 +2,6 @@
 .character-card {
   position: relative;
   width: 100%;
-  max-width: 250px;
   aspect-ratio: 5 / 7;
   cursor: pointer;
   transition: var(--transition-base);
@@ -16,7 +15,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   z-index: var(--z-card-background);
@@ -25,12 +24,12 @@
 /* Portrait Layer (z-index: 21) */
 .character-card__portrait {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: auto;
-  height: 85%;
-  object-fit: contain;
+  height: 78%;
+  object-fit: cover;
   z-index: var(--z-card-portrait);
   transition: var(--transition-base);
 }
@@ -38,11 +37,11 @@
 /* Foreground Frame Layer (z-index: 22) */
 .character-card__foreground {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
+  top: 1%;
+  left: 2%;
+  width: 96%;
+  height: 98%;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   z-index: var(--z-card-foreground);
@@ -56,7 +55,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   z-index: var(--z-card-lock);
@@ -66,11 +65,12 @@
 /* Category Icon */
 .character-card__category-icon {
   position: absolute;
-  bottom: 64px;
+  bottom: 19%;
   left: 50%;
   transform: translateX(-50%);
-  width: 32px;
-  height: 32px;
+  width: 12%;
+  height: auto;
+  aspect-ratio: 1 / 1;
   object-fit: contain;
   z-index: calc(var(--z-card-foreground) + 1);
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 1));

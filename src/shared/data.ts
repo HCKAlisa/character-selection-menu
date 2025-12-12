@@ -1,35 +1,63 @@
 import { CharacterCategory } from "./types";
+import type { FilterType } from "./types";
 
 // Centralized asset path mappings for all game assets
 export const ASSET_PATHS = {
     buttons: {
-    normal: '/assets/Buttons/FilterButton_Normal.png',
-    hovered: '/assets/Buttons/FilterButton_Hovered.png',
-    active: '/assets/Buttons/FilterButton_Active.png',
-    checkboxEmpty: '/assets/Buttons/Checkbox_Empty.png',
-    checkboxFill: '/assets/Buttons/Checkbox_Fill.png',
+        normal: '/assets/Buttons/FilterButton_Normal.png',
+        hovered: '/assets/Buttons/FilterButton_Hovered.png',
+        active: '/assets/Buttons/FilterButton_Active.png',
+        checkboxEmpty: '/assets/Buttons/Checkbox_Empty.png',
+        checkboxFill: '/assets/Buttons/Checkbox_Fill.png',
     },
     cards: {
-    backgroundNormal: '/assets/CharacterCards/CardStates/CharacterCard_Background_Normal.png',
-    backgroundActive: '/assets/CharacterCards/CardStates/CharacterCard_Background_Active.png',
-    foregroundNormal: '/assets/CharacterCards/CardStates/CharacterCard_Foreground_Normal.png',
-    foregroundLocked: '/assets/CharacterCards/CardStates/CharacterCard_Foreground_Locked.png',
-    active: '/assets/CharacterCards/CardStates/CharacterCard_Active.png',
-    lockedActive: '/assets/CharacterCards/CardStates/CharacterCard_Locked_Active.png',
+        backgroundNormal: '/assets/CharacterCards/CardStates/CharacterCard_Background_Normal.png',
+        backgroundActive: '/assets/CharacterCards/CardStates/CharacterCard_Background_Active.png',
+        foregroundNormal: '/assets/CharacterCards/CardStates/CharacterCard_Foreground_Normal.png',
+        foregroundLocked: '/assets/CharacterCards/CardStates/CharacterCard_Foreground_Locked.png',
+        active: '/assets/CharacterCards/CardStates/CharacterCard_Active.png',
+        lockedActive: '/assets/CharacterCards/CardStates/CharacterCard_Locked_Active.png',
     },
     icons: {
-    all: '/assets/Icons/Icon_All.png',
-    support: '/assets/Icons/Icon_Support.png',
-    tank: '/assets/Icons/Icon_Tank.png',
-    brawler: '/assets/Icons/Icon_Brawler.png',
-    assassin: '/assets/Icons/Icon_Assassin.png',
+        all: '/assets/Icons/Icon_All.png',
+        support: '/assets/Icons/Icon_Support.png',
+        tank: '/assets/Icons/Icon_Tank.png',
+        brawler: '/assets/Icons/Icon_Brawler.png',
+        assassin: '/assets/Icons/Icon_Assassin.png',
     },
     static: {
-    background: '/assets/Static/Background.png',
-    divider: '/assets/Static/ScreenDivider.png',
-    bottomBar: '/assets/Static/Bottom_Bar.png',
+        background: '/assets/Static/Background.png',
+        divider: '/assets/Static/ScreenDivider.png',
+        bottomBar: '/assets/Static/Bottom_Bar.png',
     },
 } as const;
+
+export const filterOptions: FilterType[] = [
+    {
+        iconUrl: ASSET_PATHS.icons.all,
+        label: 'ALL',
+    },
+    {
+        category: CharacterCategory.Support,
+        iconUrl: ASSET_PATHS.icons.support,
+        label: 'SUPPORT',
+    },
+    {
+        category: CharacterCategory.Tank,
+        iconUrl: ASSET_PATHS.icons.tank,
+        label: 'TANK',
+    },
+    {
+        category: CharacterCategory.Brawler,
+        iconUrl: ASSET_PATHS.icons.brawler,
+        label: 'BRAWLER',
+    },
+    {
+        category: CharacterCategory.Assassin,
+        iconUrl: ASSET_PATHS.icons.assassin,
+        label: 'ASSASSIN',
+    },
+];
 
 export function getCategoryIconPath(category: CharacterCategory): string {
     switch (category) {
@@ -45,4 +73,3 @@ export function getCategoryIconPath(category: CharacterCategory): string {
             return ASSET_PATHS.icons.all;
     }
 }
-

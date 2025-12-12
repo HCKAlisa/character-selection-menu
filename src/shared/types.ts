@@ -27,3 +27,6 @@ export interface FilterType {
 // Card & Button Visual State
 export type VisualState = 'Normal' | 'Hovered' | 'Active';
 
+// Application State Events
+export type AppStateEvent = 'filterChanged' | 'showLockedChanged' | 'selectedCharacterChanged';
+
