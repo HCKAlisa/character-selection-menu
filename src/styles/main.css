@@ -309,6 +309,7 @@ body::after {
   }
 
   .page-header {
+    height: 12vh;
     padding: 0 2em;
   }
 
@@ -324,7 +325,7 @@ body::after {
   }
 
   .content-wrapper::after {
-    top: 5%;
+    top: 0%;
     height: 100%;
   }
 
