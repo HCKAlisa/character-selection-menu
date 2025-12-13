@@ -148,8 +148,6 @@ body::after {
 }
 
 /* Responsive Design */
-
-/* TODO: Fine-tune breakpoints and styles */
 @media only screen and (max-width: 599px) {
   body {
     padding: 0 10px;
@@ -345,7 +343,6 @@ body::after {
   }
 }
 
-/* TODO: Adjust for larger screens */
 @media (min-width: 2550px) {
   .page-header {
     height: 10vh;
