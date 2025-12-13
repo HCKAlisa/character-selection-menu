@@ -141,7 +141,7 @@ body::after {
 .character-grid {
   padding: 20px 40px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-row-gap: var(--character-grid-gap);
   grid-column-gap: var(--character-grid-gap);
@@ -151,9 +151,109 @@ body::after {
 
 /* TODO: Fine-tune breakpoints and styles */
 @media only screen and (max-width: 599px) {
+  body {
+    padding: 0 10px;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  body::after {
+    display: none;
+  }
+
+  .page-header {
+    height: 10vh;
+    padding: 0 2em;
+  }
+
+  .page-title {
+    font-size: 2.5em;
+    -webkit-box-reflect: below -18px
+      linear-gradient(transparent, transparent 35%, rgba(255, 255, 255, 0.2));
+  }
+
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    padding: 0;
+    height: 90vh;
+  }
+
+  .content-wrapper::after {
+    display: none;
+  }
+
+  .main-content {
+    box-sizing: border-box;
+    height: 100%;
+    overflow-y: scroll;
+    padding-bottom: 20px;
+  }
+
+  .main-content::after {
+    display: none;
+  }
+
+  .character-grid {
+    padding: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-row-gap: 0.8em;
+    grid-column-gap: 0.8em;
+  }
 }
 
 @media (min-width: 600px) and (max-width: 904px) {
+  body {
+    padding: 0 10px;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  body::after {
+    display: none;
+  }
+
+  .page-header {
+    height: 10vh;
+    padding: 0 2em;
+  }
+
+  .page-title {
+    font-size: 2.5em;
+    -webkit-box-reflect: below -18px
+      linear-gradient(transparent, transparent 35%, rgba(255, 255, 255, 0.2));
+  }
+
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    padding: 0;
+    height: 90vh;
+  }
+
+  .content-wrapper::after {
+    display: none;
+  }
+
+  .main-content {
+    box-sizing: border-box;
+    height: 100%;
+    overflow-y: scroll;
+    padding-bottom: 20px;
+  }
+
+  .main-content::after {
+    display: none;
+  }
+
+  .character-grid {
+    padding: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-row-gap: 0.8em;
+    grid-column-gap: 0.8em;
+  }
 }
 
 @media (min-width: 905px) and (max-width: 1239px) {
