@@ -217,6 +217,7 @@ body::after {
   .page-header {
     height: 10vh;
     padding: 0 2em;
+    justify-content: center;
   }
 
   .page-title {
@@ -249,14 +250,51 @@ body::after {
 
   .character-grid {
     padding: 1rem;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-row-gap: 0.8em;
-    grid-column-gap: 0.8em;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (min-width: 905px) and (max-width: 1239px) {
+  body {
+    padding: 0 10px;
+  }
+
+  body::after {
+    display: none;
+  }
+
+  .page-header {
+    padding: 0 2em;
+  }
+
+  .page-title {
+    font-size: 2.5em;
+    -webkit-box-reflect: below -18px
+      linear-gradient(transparent, transparent 35%, rgba(255, 255, 255, 0.2));
+  }
+
+  .content-wrapper {
+    grid-template-columns: 18vw 1fr;
+    padding: 1rem 2rem;
+  }
+
+  .content-wrapper::after {
+    display: none;
+  }
+
+  .main-content::after {
+    bottom: 1%;
+    height: 10%;
+  }
+
+  .character-grid {
+    padding: 1.5em 3em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-row-gap: 0.8em;
+    grid-column-gap: 0.8em;
+  }
 }
 
 @media (min-width: 1240px) and (max-width: 1439px) {
@@ -289,7 +327,7 @@ body::after {
 
   .content-wrapper::after {
     top: 5%;
-    height: 95%;
+    height: 100%;
   }
 
   .main-content::after {
@@ -309,40 +347,51 @@ body::after {
 
 /* TODO: Adjust for larger screens */
 @media (min-width: 2550px) {
-  body {
-    padding: 0 10px;
-  }
-
-  body::after {
-    bottom: -1%;
-    left: 0;
-    width: 100%;
-    height: 11%;
-    background-size: contain;
-  }
-
   .page-header {
-    padding: 0 2em;
+    height: 10vh;
+    padding: 0 5em;
   }
 
   .page-title {
-    font-size: 2.5em;
-    -webkit-box-reflect: below -22px
-      linear-gradient(transparent, transparent 45%, rgba(255, 255, 255, 0.2));
+    font-size: 3.5em;
   }
 
   .content-wrapper {
-    grid-template-columns: 20vw 1fr;
+    grid-template-columns: 22vw 1fr;
     padding: 1rem 2rem;
+    overflow: hidden;
   }
 
   .content-wrapper::after {
-    top: 5%;
-    height: 95%;
+    top: 2%;
+    right: 0;
+    width: 100vw;
+    height: 98%;
+  }
+
+  .main-content {
+    height: 80vh;
   }
 
   .main-content::after {
-    bottom: 1%;
-    height: 10%;
+    content: "";
+    position: fixed;
+    bottom: 7%;
+    left: 25vw;
+    right: 0;
+    height: 2%;
+    backdrop-filter: blur(0);
+    filter: blur(2px);
+    pointer-events: none;
+    z-index: 50;
+  }
+
+  .character-grid {
+    padding: 20px 40px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-row-gap: var(--character-grid-gap);
+    grid-column-gap: var(--character-grid-gap);
   }
 }
